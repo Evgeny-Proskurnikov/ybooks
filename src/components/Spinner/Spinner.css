@@ -7,8 +7,8 @@
 	border-radius: 50%;
 	
 	position: absolute;
-	top: 16%;
-  left: 42%;
+	top: 40%;
+  left: 47%;
 	
 	animation: spin .75s infinite linear;
 }

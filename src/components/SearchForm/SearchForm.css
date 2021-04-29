@@ -3,7 +3,6 @@
   position: relative;
   width: 100%;
   max-width: 500px;
-  margin-top: 200px;
 }
 
 .form__input {
@@ -26,13 +25,13 @@
 }
 
 .form__input:focus {
-  box-shadow: 0 0 5px rgb(255, 255, 255, .8);
+  box-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
 .form__button {
   width: 168px;
   height: 64px;
-  background: #24c2c2;
+  background: #45a77b;
   border-radius: 10px;
   border: none;
   padding: 0;
@@ -51,11 +50,11 @@
 
 .form__button:hover {
   cursor: pointer;
-  background-color: rgb(37, 204, 204);
+  background-color: #4ec48f;
 }
 
 .form__button:focus {
-  background-color: #1fa7a7;
+  background-color: #368662;
 }
 
 .form__button_inactive {
