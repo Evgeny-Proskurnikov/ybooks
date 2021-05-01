@@ -12,12 +12,16 @@
 }
 
 .grid-cards {
+  display: flex;
+  align-items: center;
   min-height: 30vh;
   background-color: #38394f;
   padding: 80px 0 80px;
 }
 
 .grid-cards__title {
+  width: calc(100% - 208px);
+  margin: 0 auto;
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -31,5 +35,9 @@
   .search {
     padding: 66px 0 48px;
     margin-top: -66px;
+  }
+
+  .grid-cards__title {
+    width: calc(100% - 80px);
   }
 }

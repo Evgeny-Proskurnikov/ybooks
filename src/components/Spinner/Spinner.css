@@ -20,9 +20,16 @@
   height: 30px;
 }
 
+@media screen and (max-width: 768px) {
+  .spinner {
+    top: 38%;
+    left: 45%;
+  }
+}
+
 @media screen and (max-width: 520px) {
-  .spinner_type_header {
-    top: 18%;
+  .spinner {
+    top: 2%;
     left: 85%;
     width: 25px;
     height: 25px;

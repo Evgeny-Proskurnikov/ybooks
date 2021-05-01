@@ -1,12 +1,12 @@
 import React from "react";
 
-function Card({ card }) {
-  // function handleClick() {
-
-  // }
+function Card({ card, handleCardClick }) {
+  function handleClick() {
+    handleCardClick(card)
+  }
 
   return (
-    <div className="card">
+    <div className="card" onClick={handleClick}>
       <div>
         <img src={card ? card.cover : ''} alt={card ? card.title : ''} className="card__image"/>
         <div className="card__container">

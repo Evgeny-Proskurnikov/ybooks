@@ -2,7 +2,7 @@
   width: calc(100% - 208px);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
   gap: 16px;
   justify-content: center;
 }
@@ -18,7 +18,7 @@
 @media screen and (max-width: 520px) {
   .elements {
     width: calc(100% - 32px);
-    grid-template-columns: repeat(auto-fit, minmax(288px, 288px));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
     gap: 10px;
   }
 }

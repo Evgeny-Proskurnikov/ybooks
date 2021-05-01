@@ -1,1 +1,1 @@
-export const BOOKS_AMOUNT = 10;
+export const BOOKS_AMOUNT = 9;

@@ -16,8 +16,8 @@
 
 .card__image {
   width: 100%;
-  min-height: 272px;
-  height: 272px;
+  min-height: 240px;
+  height: 240px;
   object-fit: cover;
   object-position: top;
   background-color: #886967;
@@ -79,18 +79,9 @@
     margin: 16px 0 0;
   }
   
-  .card__title {
-    font-size: 22px;
-    line-height: 1.09;
-    max-height: 72px;
-    overflow: hidden;
-  }
-  
   .card__author {
-    margin: 10px 0 0;
-    max-height: 88px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    width: calc(100% - 32px);
+    margin: 0 auto 16px;
   }
 }
 
@@ -105,6 +96,5 @@
   
   .card__title {
     margin: 10px 0 0;
-    max-height: 48px;
   }
 }
