@@ -1,7 +1,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
+import { addCardsRequest } from '../../redux/actions';
 
-function SearchForm({ onSearch, formLoadingState, setSpinnerState }) {
+function SearchForm({ searchCards, loading }) {
   const { register, handleSubmit, formState: { errors }, watch } = useForm({mode: 'onChange'});
   
   const currentValue = watch('search');
@@ -10,7 +12,6 @@ function SearchForm({ onSearch, formLoadingState, setSpinnerState }) {
     let timerId;
     if (!currentValue) {
       clearTimeout(timerId);
-      setSpinnerState(false);
       return;
     }
     if (currentValue.length > 3) {
@@ -21,7 +22,7 @@ function SearchForm({ onSearch, formLoadingState, setSpinnerState }) {
   }, [currentValue]); // eslint-disable-line
 
   const onSubmit = data => {
-    onSearch(data.search);
+    searchCards(data.search);
   };
   
   return (
@@ -34,10 +35,18 @@ function SearchForm({ onSearch, formLoadingState, setSpinnerState }) {
         autoComplete="off"
       />
       <button type="submit" className='form__button' disabled={errors.search}>
-        {formLoadingState ? 'Loading...' : 'Search'}
+        {loading ? 'Loading...' : 'Search'}
       </button>
     </form>
   )
 }
 
-export default SearchForm;
+const mapDispatchToProps = (dispatch) => ({
+  searchCards: (data) => dispatch(addCardsRequest(data)),
+});
+
+const mapStateToProps = (state) => ({
+  loading: state.loading,
+});
+
+export default (connect(mapStateToProps, mapDispatchToProps))(SearchForm);

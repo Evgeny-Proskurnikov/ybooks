@@ -2,14 +2,10 @@ import React from 'react';
 import Card from '../Card/Card';
 
 function Elements({ cards, handleCardClick }) {
-  const cardsCounter = 10;
   return (
     <div className="elements">
-      {cards.map((el, index) => {
-        if (index <= cardsCounter) {
-          return <Card card={el} key={el.cover} handleCardClick={handleCardClick} />
-        }
-        return null;
+      {cards.map(el => {
+        return <Card card={el} key={el.cover} handleCardClick={handleCardClick} />
       })}
     </div>
   )

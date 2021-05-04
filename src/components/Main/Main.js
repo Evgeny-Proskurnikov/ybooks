@@ -1,22 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import SearchForm from '../SearchForm/SearchForm';
 import Spinner from '../Spinner/Spinner';
 import Elements from '../Elements/Elements';
 
-function Main({ onSearch, cards, spinnerState, formLoadingState, setSpinnerState, handleCardClick }) {
-  const isCardsFound = cards.length > 0;
+function Main({ cards, loading, handleCardClick }) {
+  const isCardsFound = cards && cards.length ? true : false;
 
   return (
     <main className='main'>
       <section className='search'>
-        <SearchForm
-          onSearch={onSearch}
-          formLoadingState={formLoadingState}
-          setSpinnerState={setSpinnerState}
-        />
+        <SearchForm />
       </section>
       <section className='grid-cards'>
-        {spinnerState && <Spinner />}
+        {loading && <Spinner />}
         {isCardsFound ? 
           <Elements cards={cards} handleCardClick={handleCardClick} /> :
           <p className='grid-cards__title'>
@@ -28,4 +25,9 @@ function Main({ onSearch, cards, spinnerState, formLoadingState, setSpinnerState
   )
 }
 
-export default Main;
+const mapStateToProps = (state) => ({
+  cards: state.cards,
+  loading: state.loading
+});
+
+export default (connect(mapStateToProps))(Main);
