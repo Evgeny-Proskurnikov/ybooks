@@ -1,11 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import SearchForm from '../SearchForm/SearchForm';
 import Spinner from '../Spinner/Spinner';
 import Elements from '../Elements/Elements';
+import { ICard, IState } from '../../utils/interfaces';
 
-function Main({ cards, loading, handleCardClick }) {
-  const isCardsFound = cards && cards.length ? true : false;
+interface MainProps {
+  handleCardClick(card: ICard): void
+}
+
+const Main: React.FC<MainProps> = ({ handleCardClick }) => {
+  const { cards, loading } = useSelector((state: IState) => state);
+  
+  const isCardsFound: boolean = cards && cards.length ? true : false;
 
   return (
     <main className='main'>
@@ -25,9 +32,4 @@ function Main({ cards, loading, handleCardClick }) {
   )
 }
 
-const mapStateToProps = (state) => ({
-  cards: state.cards,
-  loading: state.loading
-});
-
-export default (connect(mapStateToProps))(Main);
+export default Main;

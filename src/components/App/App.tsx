@@ -1,21 +1,22 @@
 import React from 'react';
+import { ICard } from '../../utils/interfaces';
 import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Modal from '../Modal/Modal';
 
-function App() {
-  const [modalState, setModalState] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState({});
+const App: React.FC = () => {
+  const [modalState, setModalState] = React.useState<boolean>(false);
+  const [selectedCard, setSelectedCard] = React.useState<ICard>(Object);
 
   // открытие модалки изображения карточки
-  function handleCardClick(card) {
+  const handleCardClick = (card: ICard) => {
     setSelectedCard(card);
     setModalState(true);
   }
 
   // закрытие всех модальных окон
-  function closeAllPopups() {
+  const closeAllPopups = () => {
     setModalState(false);
   }
 

@@ -17,4 +17,4 @@
 **Технологии**
 
 * CSS/Media/Keyframes
-* JS/React/Redux
+* TypeScript/React/Redux/Redux-Saga

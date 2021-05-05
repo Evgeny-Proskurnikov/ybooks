@@ -19,8 +19,7 @@
 }
 
 .modal__container {
-  background: none;
-  box-shadow: none;
+  width: 350px;
   border-radius: 0;
   color: #FFFFFF;
   position: relative;
@@ -91,6 +90,10 @@
   }
 
   .modal__image {
+    width: 300px;
+  }
+
+  .modal__container {
     width: 300px;
   }
 }

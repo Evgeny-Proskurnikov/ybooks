@@ -1,7 +1,12 @@
 import React from 'react';
 import Card from '../Card/Card';
 
-function Elements({ cards, handleCardClick }) {
+interface ElementsProps {
+  cards: any[],
+  handleCardClick(card: object): void
+}
+
+const Elements: React.FC<ElementsProps> = ({ cards, handleCardClick }) => {
   return (
     <div className="elements">
       {cards.map(el => {

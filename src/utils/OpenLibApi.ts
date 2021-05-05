@@ -1,10 +1,12 @@
 export class OpenLibApi {
-  constructor(config) {
+  _url: string;
+  _coverUrl: string;
+  constructor(config: Config) {
     this._url = config.url;
     this._coverUrl = config.coverUrl;
   }
 
-  getBooks(query) {
+  getBooks(query: string) {
     return fetch(
       `${this._url}q=${query}`,
       {
@@ -19,7 +21,7 @@ export class OpenLibApi {
       })
   }
 
-  getCover(query) {
+  getCover(query: string) {
     return fetch(
       `${this._coverUrl}/isbn/${query}-L.jpg`,
       {
@@ -33,6 +35,11 @@ export class OpenLibApi {
         return Promise.reject(`Ошибка: ${res.status}`);
       })
   }
+}
+
+type Config = {
+  url: string
+  coverUrl: string
 }
 
 const booksRequest = new OpenLibApi({
